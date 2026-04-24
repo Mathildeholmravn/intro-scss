@@ -6,6 +6,7 @@
 }
 
 body{
+    background: blue($color: #000000);
     padding: 0;
 
     font-family: partial.$font;
@@ -100,7 +101,7 @@ body{
   }
 
 
-/*---jeg fik ikke det før med---*/
+/*---Sophias kodning - det øverste---*/
  .header-img{
     grid-column: 1/6;
     background-image: url(../img/computer.jpg);
@@ -186,3 +187,87 @@ body{
         }
   }
 
+  /*Tekst og billede sektion*/
+
+  .txt-img-section{
+    grid: 1/7; /*sectionen skal fylde den fulde bredde*/
+    display: grid;
+    grid-template-columns: repeat(7,1fr); /*7 kollonner af en fraktion*/
+
+    .tekst{
+        grid-column: 1/5; 
+        background-color: patial.$secondary-color;
+        padding: 2em 4em 4em 4em;
+
+            p{
+                color: partial.$bg-color
+            }
+
+            p:nth-of-type(4){
+                margin-bottom: 3em; 
+            }
+            
+            h2{
+                text-align: left; 
+            }
+
+            .secondary-btn{
+                @include partial.btn($bg-color: transparent);
+                border: 2px solid #fff;
+
+                    &:hover{
+                        background-color: #fff;
+                        color: partial.$secondary-color;
+                        transition: 0.3s ease-in-out;
+                    }
+            }
+    }
+
+  }
+
+  .billede{
+    grid-column: 5/8; /*billedet starter fra 5 men slutter på linje 8 (der er 7 kollonner)*/
+    background-image: url(../img/presentation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /*Kontaktformular*/
+
+  .kontakt-bg-img{
+    grid-column: 1/7;
+    background: linear-gradient(rgba(142, 142, 142, 0.8)rgba (142, 142, 142, 0.8)), url(../img/meeting.jpg); /* a = transpararent*/
+  }
+
+  .kontaktform{
+    border-radius: 5px; 
+    background-color: partial.$bg-color;
+    padding: 1.3em;
+    width: 50%; 
+    margin: 4em auto; /*margin og auto er med til at centrere blokelementet form*/
+
+    h3{
+        font-size: 25px;
+        margin-bottom: 0;
+        margin-left: 0.5em;
+    }
+
+    p{
+        margin-left: 1em;
+    }
+
+    .section-form{
+        display: flex;
+    }
+
+  }
+
+  input[type=text], input[type=email], input[type=tell], select, textarea{
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .visuallyhidden{ /**/
+    
+  }
